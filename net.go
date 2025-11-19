@@ -60,7 +60,7 @@ func xtoi(s string) (n int, i int, ok bool) {
 // trailing label separators are accepted
 func isIPv4(s string) bool {
 	s = fastTrim(s, labelSeparatorsRuneSet, trimRight)
-	for i := 0; i < iPv4len; i++ {
+	for i := range iPv4len {
 		if len(s) == 0 {
 			// Missing octets.
 			return false

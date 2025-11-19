@@ -77,7 +77,7 @@ func getPublicSuffixList(cacheFilePath string) (suffixes, error) {
 		return psl, err
 	}
 	var isPrivateSuffix bool
-	for _, line := range strings.Split(string(b), "\n") {
+	for line := range strings.SplitSeq(string(b), "\n") {
 		psl, isPrivateSuffix = processLine(line, psl, isPrivateSuffix)
 	}
 	return psl, nil
@@ -93,7 +93,7 @@ func getPublicSuffixList(cacheFilePath string) (suffixes, error) {
 func getHardcodedPublicSuffixList() (suffixes, error) {
 	var psl suffixes
 	var isPrivateSuffix bool
-	for _, line := range strings.Split(hardcodedPSL, "\n") {
+	for line := range strings.SplitSeq(hardcodedPSL, "\n") {
 		psl, isPrivateSuffix = processLine(line, psl, isPrivateSuffix)
 	}
 	return psl, nil
@@ -136,7 +136,7 @@ func getCurrentFilePath() (string, bool) {
 
 // Number of hours elapsed since last modified time of fileinfo.
 func fileLastModifiedHours(fileinfo os.FileInfo) float64 {
-	return time.Now().Sub(fileinfo.ModTime()).Hours()
+	return time.Since(fileinfo.ModTime()).Hours()
 }
 
 // update updates the local cache of Public Suffix List

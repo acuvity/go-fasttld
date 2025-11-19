@@ -18,7 +18,6 @@ import (
 	"golang.org/x/net/idna"
 )
 
-const defaultPSLFolder string = "data"
 const defaultPSLFileName string = "public_suffix_list.dat"
 const largestPortNumber int = 65535
 const pslMaxAgeHours float64 = 72

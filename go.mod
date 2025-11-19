@@ -6,10 +6,7 @@ toolchain go1.25.4
 
 require (
 	github.com/fatih/color v1.18.0
-	github.com/joeguo/tldextract v0.0.0-20220507100122-d83daa6adef8
-	github.com/jpillora/go-tld v1.2.1
 	github.com/karlseguin/intset v1.0.3-0.20221130142345-37ee0d7df651
-	github.com/mjd2021usa/tldextract v0.9.2
 	github.com/spf13/afero v1.15.0
 	github.com/spf13/cobra v1.10.1
 	github.com/tidwall/hashmap v1.8.1
